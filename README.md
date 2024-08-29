@@ -2,7 +2,7 @@
 
 Hosting Link: https://zidanh1.github.io/project-5-client/
 
-##User Stories
+## User Stories
 
 ```
 As a fitness enthusiast,
