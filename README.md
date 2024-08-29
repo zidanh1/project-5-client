@@ -1,9 +1,8 @@
 # Shopping List App
 
 Hosting Link: https://zidanh1.github.io/project-5-client/
-User Stories
 
-
+##User Stories
 
 ```
 As a fitness enthusiast,
@@ -21,11 +20,7 @@ so that my home is fully equipped and comfortable.
 
 **Objective**: Develop a simple Node.js application that allows users to create and manage a shopping list. The application will enable users to add, view, edit, and delete items from their list, providing a basic yet functional interface for shopping list management.
 
-
-
 ## Key Features
-
-
 
 - **Add Items**: Users can add items to the shopping list by specifying the item name and quantity.
 - **View Shopping List**: The application will display the current items in the shopping list, showing the item name, quantity, and a unique identifier for each item.
