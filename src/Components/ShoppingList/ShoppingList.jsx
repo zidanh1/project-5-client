@@ -1,26 +1,31 @@
 import React, { useState } from "react";
 import ShoppingForm from "../ShoppingForm/ShoppingForm";
+import "../ShoppingList/ShoppingList.css";
 
 function ShoppingItem({ id, item, quantity, deleteItem, updateItem }) {
-  const [isEdit, setEdit] = useState(false); // state storing mode
+  const [isEdit, setEdit] = useState(false);
+
   function handleDelete(event) {
     event.preventDefault();
     deleteItem(id);
-  } // sets edit mode to true
+  }
+
   function handleEdit(event) {
     event.preventDefault();
-    setEdit((oldEditBoolean) => !oldEditBoolean);
+    setEdit((prevEdit) => !prevEdit);
   }
 
   function handleUpdate(item, quantity) {
     updateItem(id, item, quantity);
     setEdit(false);
-  } // we will conditionally render these nodes based on isEdit // create a read only and a read-write version of the node
+  }
+
   const ReadOnlyJsx = (
     <span>
-                          {item} ( {quantity} )              
+      {item} ({quantity})
     </span>
   );
+
   const EditJsx = (
     <ShoppingForm
       submitItem={handleUpdate}
@@ -29,24 +34,22 @@ function ShoppingItem({ id, item, quantity, deleteItem, updateItem }) {
       defaultQuantity={quantity}
     />
   );
+
   return (
     <li>
-                          {isEdit ? EditJsx : ReadOnlyJsx}        
+      {isEdit ? EditJsx : ReadOnlyJsx}
       <div className="action">
-                
-        <button className="deletebtn" onClick={handleDelete} disabled={isEdit}>
-                    Delete         
+        <button className="deletebtn" onClick={handleDelete}>
+          Delete
         </button>
-                                      
         <button className="Editbtn" onClick={handleEdit}>
-                     {isEdit ? "Cancel" : "Edit"}                      
+          {isEdit ? "Cancel" : "Edit"}
         </button>
-              
       </div>
-                                      
     </li>
   );
 }
+
 export default function ShoppingList({ items, deleteItem, updateItem }) {
   const ItemsJsx = items.map((listItem) => (
     <ShoppingItem
@@ -61,8 +64,7 @@ export default function ShoppingList({ items, deleteItem, updateItem }) {
 
   return (
     <div className="card">
-                   <ul>{ItemsJsx}</ul>
-          
+      <ul>{ItemsJsx}</ul>
     </div>
   );
 }

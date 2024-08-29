@@ -1,0 +1,85 @@
+/* Card styling */
+.card {
+  width: 90%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  justify-content: space-evenly;
+}
+
+li span {
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.action {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Editbtn,
+.deletebtn {
+  width: 48%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px;
+}
+
+.Editbtn {
+  background-color: skyblue;
+}
+
+.deletebtn {
+  background-color: red;
+  color: white;
+}
+
+/* Responsive styles */
+@media (min-width: 600px) {
+  li {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  li span {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .action {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .Editbtn,
+  .deletebtn {
+    width: auto;
+    margin-left: 10px;
+  }
+}
