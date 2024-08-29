@@ -36,6 +36,7 @@ function ShoppingItem({ id, item, quantity, deleteItem, updateItem }) {
   );
 
   return (
+    // edit
     <li>
       {isEdit ? EditJsx : ReadOnlyJsx}
       <div className="action">
