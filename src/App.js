@@ -25,7 +25,6 @@ function App() {
       .then((x) => x.json())
       .then((response) => {
         setShoppingList(response);
-        console.log(response);
       });
   };
   useEffect(loadData, []);
